@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Image } from "react-native";
+import { NavigationActions } from 'react-navigation';
 import { connect } from "react-redux";
 import {
   Container,
@@ -56,6 +57,18 @@ class Login extends Component {
     this.renderInput = this.renderInput.bind(this);
   }
 
+  logMeIn() {
+    this.props
+      .navigation
+      .dispatch(NavigationActions.reset(
+        {
+          index: 0,
+          actions: [
+            NavigationActions.navigate({ routeName: 'Home'})
+          ]
+        }));
+  }
+
   setUser(name) {
     this.props.setUser(name);
   }
@@ -97,7 +110,7 @@ class Login extends Component {
                 <Field name="password" component={this.renderInput} />
                 <Button
                   style={styles.btn}
-                  onPress={() => this.props.navigation.navigate("Home")}
+                  onPress={this.logMeIn.bind(this)}
                 >
                   <Text>Login</Text>
                 </Button>
