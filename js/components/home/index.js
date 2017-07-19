@@ -110,10 +110,7 @@ const mapStateToProps = state => ({
 const HomeSwagger = connect(mapStateToProps, bindAction)(Home);
 const DrawNav = DrawerNavigator(
   {
-    Home: { screen: HomeSwagger,
-    navigationOptions: ({navigation}) => ({
-      drawerLockMode: 'locked-closed'
-    }) },
+    Home: { screen: HomeSwagger },
     BlankPage2: { screen: BlankPage2 }
   },
   {
@@ -124,10 +121,7 @@ const DrawerNav = null;
 DrawNav.navigationOptions = ({ navigation }) => {
   DrawerNav = navigation;
   return {
-    header: null,
-    navigationOptions: ({navigation}) => ({
-      drawerLockMode: 'locked-closed'
-    })
+    header: null
   };
 };
 export default DrawNav;

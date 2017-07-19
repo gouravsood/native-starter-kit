@@ -12,10 +12,7 @@ import {
 const routes = ["Home", "BlankPage2"];
 export default class DrawBar extends React.Component {
   static navigationOptions = {
-    header: null,
-    navigationOptions: ({navigation}) => ({
-      drawerLockMode: 'locked-closed'
-    })
+    header: null
   };
   render() {
     return (
