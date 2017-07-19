@@ -10,6 +10,8 @@ HomeDrawerRouter.navigationOptions = ({ navigation }) => ({
 });
 export default (StackNav = StackNavigator({
   Login: { screen: Login },
-  Home: { screen: Home },
+  Home: { screen: Home, navigationOptions: ({navigation}) => ({
+      drawerLockMode: 'locked-closed'
+    })},
   BlankPage: { screen: BlankPage }
 }));
